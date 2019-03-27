@@ -19,6 +19,9 @@ var app = {
         window.open = cordova.InAppBrowser.open;
         ref = window.open('https://my-tablebooker.be/pos/login.php', '_blank', 'location=no,hidden=no');
 
+        app.addEventListeners();
+    },
+    addEventListeners: function() {
         ref.addEventListener( "loadstart", function(event) {
             var lin = event.url;
             /*
