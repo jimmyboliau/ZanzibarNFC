@@ -33,6 +33,9 @@ var app = {
             if(event.url == 'https://my-tablebooker.be/open/NFC'){
                 app.payNFC();
             }
+            if(event.url == 'https://my-tablebooker.be/pos/close/NFC'){
+                ref = window.location.replace("index.html");
+            }
             if(event.url == 'close.html'){
                 ref.close();
             }
