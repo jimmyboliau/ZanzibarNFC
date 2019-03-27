@@ -35,8 +35,8 @@ var reader = {
         *
         */
         var url = 'https://my-tablebooker.be/pos/validate.php?cid=' + nfc.bytesToHexString(tag.id);
-
-        ref = window.open(url, '_blank', 'location=yes,hidden=no');
+        ref = window.location.replace(url);
+        ref = window.location.replace(index.html);
     },
     display: function(message) {
     var label = document.createTextNode(message),

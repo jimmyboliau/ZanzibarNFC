@@ -16,6 +16,7 @@ var app = {
     this runs when the device is ready for user interaction:
     */
     onDeviceReady: function() {
+        window.open = cordova.InAppBrowser.open;
         ref = window.open('https://my-tablebooker.be/pos/login.php', '_blank', 'location=no,hidden=no');
 
         ref.addEventListener( "loadstart", function(event) {
