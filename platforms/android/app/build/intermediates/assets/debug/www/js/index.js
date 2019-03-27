@@ -20,7 +20,13 @@ var app = {
 
         ref.addEventListener( "loadstart", function(event) {
             var lin = event.url;
-            if(event.url == 'https://my-tablebooker.be/pos/index.php'){
+            /*
+            *
+            * Luisteren naar welke link?
+            *
+            */
+            //if(event.url == 'https://my-tablebooker.be/pos/index.php'){
+            if(event.url == 'https://my-tablebooker.be/open/NFC'){
                 app.payNFC();
             }
             if(event.url == 'close.html'){
