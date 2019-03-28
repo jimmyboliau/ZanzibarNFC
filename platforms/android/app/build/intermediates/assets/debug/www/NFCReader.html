@@ -2,10 +2,15 @@
 <html>
     <head>
         <title>NFC tag ID reader</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <style>body{background-image:url('img/nfcbackground.jpg');padding:0;margin:0;height:100vh;width:100vw;background-repeat:no-repeat;background-size:cover;background-position:center center;}</style>
     </head>
     <body>
     	<div class="reader">
-    		<div id="messageClose"><a href="javascript:closeReader();">Close</a></div><br><br>
+            <div id="messageClose"><a href="javascript:closeReader();" class="btn btn-danger btn-lg" style="position:absolute;bottom:5vh;width:80%;left:50%;margin-left:-40%">Sluiten</a></div>
             <div id="messageDiv"></div>
         </div>
     	<script type="text/javascript" src="cordova.js"></script>
@@ -15,8 +20,10 @@
             reader.initialize();
             function closeReader(){
             //alert(authk);
-            window.location.replace("index.html");
+            window.location.replace("index.html?p=order");
         }
         </script>
+
+       
     </body>
 </html>

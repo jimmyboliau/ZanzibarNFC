@@ -11,18 +11,19 @@ var app = {
     */
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener('backbutton', onBackKeyDown, false);
     },
     /*
     this runs when the device is ready for user interaction:
     */
     onDeviceReady: function() {
         window.open = cordova.InAppBrowser.open;
-        ref = window.open('https://my-tablebooker.be/pos/login.php', '_blank', 'location=no,hidden=no');
+        ref = window.open('https://my-tablebooker.be/pos/login.php', '_blank', 'location=no,hidden=no,zoom=no');
 
         app.addEventListeners();
     },
     addEventListeners: function() {
-        ref.addEventListener( "loadstart", function(event) {
+        ref.addEventListener( 'loadstart', function(event) {
             var lin = event.url;
             /*
             *
@@ -34,7 +35,7 @@ var app = {
                 app.payNFC();
             }
             if(event.url == 'https://my-tablebooker.be/pos/close/NFC'){
-                ref = window.location.replace("index.html");
+                ref = window.location.replace("index.html?p=history");
             }
             if(event.url == 'close.html'){
                 ref.close();
@@ -47,12 +48,14 @@ var app = {
     payNFC: function() {
         ref = window.location.replace('NFCReader.html');
     },
+    onBackKeyDown: function() {
+    },
     /*
     appends @message to the message div:
     */
     display: function(message) {
     var label = document.createTextNode(message),
-    lineBreak = document.createElement("br");
+    lineBreak = document.createElement('br');
     messageDiv.appendChild(lineBreak); // add a line break
     messageDiv.appendChild(label); // add the text
     },
