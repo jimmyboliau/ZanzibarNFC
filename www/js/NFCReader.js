@@ -37,7 +37,7 @@ var reader = {
         var url = 'https://my-tablebooker.be/pos/validate.php?cid=' + nfc.bytesToHexString(tag.id);
         //ref = window.location.replace(url);
         //ref = window.location.replace(url, '_self', 'location=no,hidden=no');
-        ref = cordova.InAppBrowser.open(url, '_self', 'location=no,hidden=no');
+        ref = cordova.InAppBrowser.open(url, '_self', 'location=no,hidden=no,zoom=no');
         app.addEventListeners();
         //reader.display("id location opened");
     },
